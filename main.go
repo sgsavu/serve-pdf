@@ -21,7 +21,7 @@ func main() {
 
 	http.HandleFunc("/", servePDF)
 
-	fmt.Println("Server is running on http://localhost:8080")
+	fmt.Printf("Server is running on http://localhost:%s\n", *port)
 	err := http.ListenAndServe(fmt.Sprintf(":%s", *port), nil)
 	if err != nil {
 		log.Fatalf("Server failed to start: %v", err)
